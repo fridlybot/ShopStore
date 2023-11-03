@@ -252,7 +252,7 @@ function sendMessage() {
     };
   const WEBSITE_URL = process.env.WEBSITE_URL; // Access the environment variable
 
-  if (!apiUrl) {
+  if (!WEBSITE_URL) {
     console.error('API_URL environment variable is not set.');
 } else {
     // Send the data to your Google Apps Script using fetch
