@@ -250,7 +250,7 @@ function sendMessage() {
             };
         })
     };
-  const WEBSITE_URL = process.env.API_URL; // Access the environment variable
+  const WEBSITE_URL = process.env.WEBSITE_URL; // Access the environment variable
     // Send the data to your Google Apps Script using fetch
     fetch(WEBSITE_URL, {
         method: 'POST',
