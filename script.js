@@ -250,13 +250,10 @@ function sendMessage() {
             };
         })
     };
-  const WEBSITE_URL = process.env.WEBSITE_URL; // Access the environment variable
 
-  if (!WEBSITE_URL) {
-    console.error('API_URL environment variable is not set.');
-} else {
+
     // Send the data to your Google Apps Script using fetch
-    fetch(WEBSITE_URL, {
+    fetch('https://webhook.site/661eb095-180b-49b9-a527-fdd9d290101c', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -300,6 +297,5 @@ function closeCartItems() {
     cartItems.style.right = '-300px'; // Close the cart-items
 }
 
-}
 
 
