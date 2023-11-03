@@ -119,8 +119,8 @@
             padding: 30px;
             color: #3e3e3e;
             display: none;
-             overflow: auto; /* Enable scrolling within the detail container */
-            max-height: 600px; /* Set a maximum height for the detail container (adjust as needed) */
+             /*overflow: auto; /* Enable scrolling within the detail container */
+            max-height: 732px; /* Set a maximum height for the detail container (adjust as needed) */
         }
         .top-bar {
             display: flex;
