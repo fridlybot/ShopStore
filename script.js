@@ -254,7 +254,7 @@ function sendMessage() {
 
 
     // Send the data to your Google Apps Script using fetch
-    fetch('https://webhook.site/661eb095-180b-49b9-a527-fdd9d290101c', {
+    fetch('https://shop-store-hidjab.onrender.com/webhook', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
