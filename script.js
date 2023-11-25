@@ -81,9 +81,10 @@ function displayProductDetails(product) {
 
 // ...
 
-// Call the function to load data on page load
-fetchDataAndDisplay();
-
+// Call the function to load data and sizes on page load
+window.onload = function () {
+    fetchDataAndDisplay();
+};
         
         // Add an event listener to go back when the arrow button is clicked
 const arrowButton = document.querySelector('.arrow-img');
