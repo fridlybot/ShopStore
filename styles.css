@@ -201,6 +201,12 @@
         .color4 {
             background: #fcb1f0;
         }
+        .color5 {
+            background: #CC0000;
+        }
+        .color6{
+            background: #018749;
+        }
         .detail-price {
             display: flex;
             align-items: center;
