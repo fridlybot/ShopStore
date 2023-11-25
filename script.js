@@ -1,4 +1,28 @@
-  // Function to fetch data from the API and update the card
+// Function to dynamically load sizes into the select-size section
+function loadSizes(data) {
+    // Assuming there is a select element with the id 'select-size' in your HTML
+    const selectSizeElement = document.getElementById('select-size');
+
+    // Clear existing options
+    selectSizeElement.innerHTML = '';
+
+    // Iterate over each product and its sizes
+    data.forEach(product => {
+        // Remove square brackets and split the sizes into an array
+        const sizes = product.Size.replace(/\[|\]/g, '').split(' ');
+
+        // Create option elements and add them to the select element
+        sizes.forEach(size => {
+            const optionElement = document.createElement('span');
+            optionElement.className = 'size-option';
+            optionElement.textContent = size;
+            selectSizeElement.appendChild(optionElement);
+        });
+    });
+}
+
+
+// Function to fetch data from the API and update the card
 async function fetchDataAndDisplay() {
     try {
         const response = await fetch('https://retoolapi.dev/BXy5Nh/data');
@@ -29,10 +53,14 @@ async function fetchDataAndDisplay() {
             card.appendChild(viewButton);
             cardContainer.appendChild(card);
         });
+      // Load sizes dynamically after fetching data
+        loadSizes(data);
     } catch (error) {
         console.error('Error fetching data:', error);
     }
 }
+// Call the function to load data on page load
+fetchDataAndDisplay();
 
 // Function to display product details in the detail-container
 function displayProductDetails(product) {
@@ -220,31 +248,6 @@ addToCartButton.addEventListener('click', () => {
             }
         });
 
-// Function to dynamically load sizes into the select-size section
-function loadSizes() {
-  // Assuming there is a select element with the id 'select-size' in your HTML
-  const selectSizeElement = document.getElementById('select-size');
-
-  // Clear existing options
-  selectSizeElement.innerHTML = '';
-
-  // Iterate over each product and its sizes
-  data.forEach(product => {
-    // Remove square brackets and split the sizes into an array
-    const sizes = data.Size.replace(/\[|\]/g, '').split(' ');
-
-    // Create option elements and add them to the select element
-    sizes.forEach(size => {
-      const optionElement = document.createElement('span');
-      optionElement.className = 'size-option';
-      optionElement.textContent = size;
-      selectSizeElement.appendChild(optionElement);
-    });
-  });
-}
-
-// Call the function to load sizes when the page loads or when the data is received
-window.onload = loadSizes;
 
 // Function to clear the contents of the cart-content
 function clearCartItems() {
