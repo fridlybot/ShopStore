@@ -1,7 +1,7 @@
   // Function to fetch data from the API and update the card
 async function fetchDataAndDisplay() {
     try {
-        const response = await fetch('https://retoolapi.dev/R3jI3x/data');
+        const response = await fetch('https://retoolapi.dev/BXy5Nh/data');
         const data = await response.json();
         const cardContainer = document.getElementById('card-container');
         cardContainer.innerHTML = '';
