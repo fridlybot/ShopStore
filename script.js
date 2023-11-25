@@ -220,6 +220,31 @@ addToCartButton.addEventListener('click', () => {
             }
         });
 
+// Function to dynamically load sizes into the select-size section
+function loadSizes() {
+  // Assuming there is a select element with the id 'select-size' in your HTML
+  const selectSizeElement = document.getElementById('select-size');
+
+  // Clear existing options
+  selectSizeElement.innerHTML = '';
+
+  // Iterate over each product and its sizes
+  data.forEach(product => {
+    // Remove square brackets and split the sizes into an array
+    const sizes = data.Size.replace(/\[|\]/g, '').split(' ');
+
+    // Create option elements and add them to the select element
+    sizes.forEach(size => {
+      const optionElement = document.createElement('span');
+      optionElement.className = 'size-option';
+      optionElement.textContent = size;
+      selectSizeElement.appendChild(optionElement);
+    });
+  });
+}
+
+// Call the function to load sizes when the page loads or when the data is received
+window.onload = loadSizes;
 
 // Function to clear the contents of the cart-content
 function clearCartItems() {
