@@ -1,3 +1,4 @@
+
 // Function to dynamically load sizes into the select-size section
 function loadSizes(data) {
     // Assuming there is a select element with the id 'select-size' in your HTML
@@ -59,8 +60,10 @@ async function fetchDataAndDisplay() {
         console.error('Error fetching data:', error);
     }
 }
-// Call the function to load data on page load
-fetchDataAndDisplay();
+// Call the function to load data and sizes on page load
+window.onload = function () {
+    fetchDataAndDisplay();
+};
 
 // Function to display product details in the detail-container
 function displayProductDetails(product) {
@@ -81,10 +84,7 @@ function displayProductDetails(product) {
 
 // ...
 
-// Call the function to load data and sizes on page load
-window.onload = function () {
-    fetchDataAndDisplay();
-};
+
         
         // Add an event listener to go back when the arrow button is clicked
 const arrowButton = document.querySelector('.arrow-img');
