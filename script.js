@@ -1,7 +1,7 @@
-// Function to fetch data from the API and update the card
+ // Function to fetch data from the API and update the card
 async function fetchDataAndDisplay() {
     try {
-        const response = await fetch('https://retoolapi.dev/BXy5Nh/data');
+        const response = await fetch('https://retoolapi.dev/m75uqb/data');
         const data = await response.json();
         const cardContainer = document.getElementById('card-container');
         cardContainer.innerHTML = '';
@@ -29,7 +29,6 @@ async function fetchDataAndDisplay() {
             card.appendChild(viewButton);
             cardContainer.appendChild(card);
         });
-
     } catch (error) {
         console.error('Error fetching data:', error);
     }
@@ -54,8 +53,10 @@ function displayProductDetails(product) {
 
 // ...
 
+// Call the function to load data on page load
+fetchDataAndDisplay();
 
-        
+
         // Add an event listener to go back when the arrow button is clicked
 const arrowButton = document.querySelector('.arrow-img');
 arrowButton.addEventListener('click', () => {
@@ -164,7 +165,6 @@ cartItemImage.alt = productName;
         <p class="selected-color-item ${selectedColor}"></p>
         <p class="price-item-price">${productPrice}</p>
         <button class="remove-item">Remove</button>
-
     `;
 
     // Append the image and details to the cart item
@@ -224,7 +224,6 @@ addToCartButton.addEventListener('click', () => {
 function clearCartItems() {
     const cartContent = document.querySelector('.cart-content');
     cartContent.innerHTML = ''; // Remove all child elements
-   updateCartTotal(); // Update the cart total
 }
 
 
@@ -251,9 +250,8 @@ function sendMessage() {
         })
     };
 
-
     // Send the data to your Google Apps Script using fetch
-    fetch('https://hokshop-imen.onrender.com/webhook', {
+    fetch('https://webhook.site/661eb095-180b-49b9-a527-fdd9d290101c', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -268,7 +266,7 @@ function sendMessage() {
                     title: 'Message Sent',
                     text: 'Your message has been sent successfully.',
                 });
-                
+
                 // Clear the cart items
                 clearCartItems();
 
@@ -296,6 +294,5 @@ function closeCartItems() {
     const cartItems = document.getElementById('cart-items');
     cartItems.style.right = '-300px'; // Close the cart-items
 }
-
 
 
