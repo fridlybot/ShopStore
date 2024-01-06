@@ -251,7 +251,7 @@ function sendMessage() {
     };
 
     // Send the data to your Google Apps Script using fetch
-    fetch('https://hokshop-imen.onrender.com', {
+    fetch('https://hokshop-imen.onrender.com/webhook', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
